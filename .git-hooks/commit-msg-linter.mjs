@@ -1,3 +1,4 @@
+// @ts-nocheck
 /* eslint-disable */
 
 import fs from "node:fs";

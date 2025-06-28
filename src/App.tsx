@@ -1,7 +1,7 @@
 import { List } from "@/components/List";
 import { Toaster } from "@/components/ui/sonner";
 import { Tabs, TabsContent, TabsTrigger } from "@/components/ui/tabs";
-import { UploadForm } from "@/components/uploadForm";
+import { UploadForm } from "@/components/UploadForm";
 
 import { TabsList } from "./components/ui/tabs";
 
