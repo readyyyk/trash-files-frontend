@@ -1,4 +1,4 @@
-# Re:worthy
+# Trash files
 
 ## Stack
 
@@ -8,8 +8,7 @@
 - eslint/prettier (linter, prettifier)
 - shadcn (base components)
 - tailwind (style-guides)
-- [Future] Zod (runtime validation)
-- [Future][Probably] storybook (visual representation of components in bare shell)
+- Zod (runtime validation)
 
 ## Setup
 
