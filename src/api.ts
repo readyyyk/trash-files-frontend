@@ -2,7 +2,7 @@ import { z } from "zod";
 
 import { logger } from "./logging";
 
-const API_URL = "http://192.168.100.111:3000";
+const API_URL = "http://91.99.159.63:3000";
 
 export type X<T> = { success: true; data: T } | { success: false; error: { message: string } };
 
@@ -63,31 +63,4 @@ export const sendFile = async (file: File, expire: number): Promise<X<GetFileRes
     }
 };
 
-export const getFile = async (filename: string): Promise<X<GetFileResponse>> => {
-    try {
-        const response = await fetch(`${API_URL}/get/${filename}`);
-
-        if (!response.ok) {
-            return {
-                success: false,
-                error: { message: errorMessageSchema.parse(await response.json()).error },
-            };
-        }
-
-        const result = getFileSchema.safeParse(await response.json());
-
-        if (result.success) {
-            return result;
-        }
-        return {
-            ...result,
-            error: { message: ERROR_RESPONSE_FORMAT },
-        };
-    } catch (error) {
-        logger.error(`Failed to get file ${filename}: ${String(error)}`);
-        return {
-            success: false,
-            error: { message: ERROR_NETWORK },
-        };
-    }
-};
+export const getFileUrl = (filename: string) => `${API_URL}/get/${filename}`;
